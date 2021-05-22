@@ -1,0 +1,10 @@
+
+FIRST APP
+URL: docentes.refuerzamas.com
+user: docente@refuerzamas.com
+password: secretsecret
+==================================
+SECOND APP
+URL: estudiantes.refuerzamas.com
+user: estudiante@refuerzamas.com
+password: secretsecret

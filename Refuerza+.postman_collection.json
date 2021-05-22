@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "975ef955-7843-42f2-8ee5-24a763b67d86",
+		"name": "Refuerza+",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login user docente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"docente@gmail.com\",\r\n    \"password\":\"secretsecret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth-token/docente",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth-token",
+								"docente"
+							]
+						},
+						"description": "Return: Token"
+					},
+					"response": []
+				},
+				{
+					"name": "login user estudiante o tutor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"tutor@gmail.com\",\r\n    \"password\":\"secretsecret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth-token/estudiante_tutor",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth-token",
+								"estudiante_tutor"
+							]
+						},
+						"description": "Return: Token"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/auth/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial_update user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"RrQq\",\r\n    \"nickname\": null,\r\n    \"tipo_usuario\": \"asdasd\",\r\n    \"avatar\": null,\r\n    \"fecha_nacimiento\": \"2020-10-09\",\r\n    \"celular\": \"22222\",\r\n    \"email\": \"asdasd@unsch.es\",\r\n    \"direccion\": null,\r\n    \"observaciones\": \"\",\r\n    \"genero\": {\r\n        \"nombre\": \"Masculino\"\r\n    },\r\n    \"perfil_docente\": {\r\n        \"grado_instruccion\": null,\r\n        \"herramientas_videollamada\": null,\r\n        \"entrevista\": null,\r\n        \"confiabilidad\": null,\r\n        \"señal\": null,\r\n        \"breve_cv\": null,\r\n        \"curriculum\": null,\r\n        \"docencia\": null,\r\n        \"titulo\": null,\r\n        \"filosofia\": null\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial_update user estudiante",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"RrQq\",\r\n    \"first_name\": \"Jahir\",\r\n    \"last_name\": \"\",\r\n    \"tipo_usuario\": \"asdasd\",\r\n    \"avatar\": null,\r\n    \"fecha_nacimiento\": \"2020-10-09\",\r\n    \"celular\": \"22222\",\r\n    \"email\": \"asdasd@unsch.es\",\r\n    \"direccion\": null,\r\n    \"observaciones\": \"\",\r\n    \"genero_id\": 1,\r\n    \"perfil_estudiante\": {\r\n        \"institucion_id\": 1,\r\n        \"grado_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial_update user tutor",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"RrQq\",\r\n    \"first_name\": \"Jahir\",\r\n    \"last_name\": \"\",\r\n    \"tipo_usuario\": \"asdasd\",\r\n    \"avatar\": null,\r\n    \"fecha_nacimiento\": \"2020-10-09\",\r\n    \"celular\": \"22222\",\r\n    \"email\": \"asdasd@unsch.es\",\r\n    \"direccion\": null,\r\n    \"observaciones\": \"\",\r\n    \"genero_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update photo profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/USER/Pictures/jack.gif"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clases",
+			"item": [
+				{
+					"name": "Clases",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/clases/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"clases",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ultima reserva",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/reservas/ultimo/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reservas",
+								"ultimo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/reservas/5/tomar/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reservas",
+								"5",
+								"tomar",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Generos",
+			"item": [
+				{
+					"name": "List genero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/generos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"generos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive genero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/generos/1/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"generos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Niveles",
+			"item": [
+				{
+					"name": "List Nivel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/niveles/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"niveles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive Nivel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/niveles/1/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"niveles",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List nivel/grado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/niveles/1/grados/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"niveles",
+								"1",
+								"grados",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Instituciones",
+			"item": [
+				{
+					"name": "List instituciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/instituciones/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"instituciones",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Docente",
+			"item": [
+				{
+					"name": "List Docentes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/docentes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"docentes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive Docente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/docentes/3/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"docentes",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Estudiantes",
+			"item": [
+				{
+					"name": "List Docentes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/docentes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"docentes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive Docente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/docentes/3/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"docentes",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "Chats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/chats/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"chats",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mensajes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/chats/4/mensajes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"chats",
+								"4",
+								"mensajes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revisar mensajes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/chats/4/revisado/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"chats",
+								"4",
+								"revisado",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post mensaje",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chat\": 4,\r\n    \"texto\": \"asdasd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/mensajes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"mensajes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post mensaje archivo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "chat",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/C:/Users/USER/Downloads/huevos.xlsx"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/mensajes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"mensajes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Token {{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "27ef620f-e6a4-4e58-9602-cac805970bdb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4b13dd0b-f893-4e2a-adc0-f7f9e53fd8a0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "724674f1-6708-4149-859a-c52cb07530bf",
+			"key": "host",
+			"value": ""
+		},
+		{
+			"id": "dab07626-5cb4-43dd-9f52-abd2f54af3b0",
+			"key": "token",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}

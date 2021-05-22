@@ -1,0 +1,3 @@
+but my app doesn't send sounds when users send messages
+my developer told me that it is because the PWA cannot have a notification system or emit sound in every message sent
+and that for that I need to develop the front in reactive native
